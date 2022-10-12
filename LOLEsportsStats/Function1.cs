@@ -140,6 +140,22 @@ namespace LOLEsportsStats
                             champDatas[champName] = gameDeaths;
                         }
                     }
+                    for (int j = 0; j < 5; j++)
+                    {
+                        string champName = (string)gameDetails.gameMetadata.redTeamMetadata.participantMetadata[j].championId;
+                        //Console.WriteLine(gameDetails.frames.Count - 1);
+                        //Console.WriteLine(gameDetails.frames[gameDetails.frames.Count - 1]);
+
+                        int gameDeaths = (int)gameDetails.frames[gameDetails.frames.Count - 1].redTeam.participants[j].deaths;
+                        if (champDatas.ContainsKey(champName))
+                        {
+                            champDatas[champName] = champDatas[champName] + gameDeaths;
+                        }
+                        else
+                        {
+                            champDatas[champName] = gameDeaths;
+                        }
+                    }
                 }
             }
             List<ChampData> sortedResults = new List<ChampData>();
