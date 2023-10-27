@@ -112,7 +112,7 @@ namespace LOLEsportsStats
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
             var api = new Lolesportsapi();
-            dynamic matches = await api.getCompletedEvents("108998961191900167");
+            dynamic matches = await api.getCompletedEvents("110852926142971547");
             
             Dictionary<string,int> champDatas = new Dictionary<string, int>();
             var numMatches = matches.data.schedule.events.Count;
